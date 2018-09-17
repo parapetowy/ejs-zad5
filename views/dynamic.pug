@@ -1,0 +1,15 @@
+html
+    head
+        title Simple template
+    body(style='padding:50px; margin:0 auto; width:600px; text-align:center;')
+        if(name == user.name && pass == user.pass)
+            h1 Welcome back #{user.name}!
+            h2 Where would you like to go today?
+            form.searchform(action='https://www.google.com/search', method='get', name='searchform', target='_blank')
+              input(name='sitesearch', type='hidden', value='example.com')
+              input.form-control.search(autocomplete='on', name='q', placeholder='Search in example.com', required='required', type='text')
+              button.button(type='submit') Search
+            a(href="/") Logout.
+        else
+            h2 Incorrect Login
+            a(href="/") Try again!
